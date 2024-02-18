@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp9.ForgotPage"
+             Title="ForgotPage"
+             BackgroundColor="White">
+    <ScrollView>
+    <VerticalStackLayout>
+        <!--<Label 
+            Text="Восстановление пароля"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="20"
+            />-->
+            <Label Text="Восстановление пароля"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Grid.Row="1"
+            Grid.Column="1" 
+            TextColor="Black"
+            FontSize="Large"
+            Margin="20"
+            />
+        
+            <Image Source="logo2.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Grid.Row="0"
+                Grid.Column="1"
+                WidthRequest="150"
+                HeightRequest="150"
+                Margin="0,0,0,10"
+                />
+
+            <Label Text="Введите логин вашего аккаунта" 
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               Margin="5"
+                   />
+            <Frame BackgroundColor="#F1F1F1" 
+                   WidthRequest="450"
+                   HeightRequest="80"
+                   CornerRadius="12" 
+                   Margin="5">
+                <Entry x:Name="txtName" 
+                       Placeholder="IvanII9872" 
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center"
+                       WidthRequest="200" 
+                       TextColor="Black"
+                       Grid.Row="4" 
+                       Grid.Column="1" />
+            </Frame>
+
+
+            <!--<Frame 
+                BorderColor="Black"
+                Background="White"
+                CornerRadius="12" 
+                Margin="5"
+                Padding="5"
+                >
+                <Entry x:Name="txtName"
+                       Placeholder="Введите имя"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Start"
+                       WidthRequest="200"/>
+            </Frame>-->
+
+            <!--<Frame 
+                BackgroundColor="White" 
+                CornerRadius="12" 
+                Margin="5" 
+                HasShadow="True" 
+                Padding="5"
+                >
+                <Entry x:Name="txtPass"
+                       IsPassword="True"
+                       Placeholder="Пароль"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Start"
+                       WidthRequest="200"/>
+            </Frame>-->
+        
+        <!--<Editor WidthRequest="200"
+                Text="Добавьте комметарии"
+                Placeholder="Введите текст"
+                HeightRequest="200"/>-->
+        
+        <Button Text="Отправить"
+                TextColor="White"
+                BackgroundColor="#4347D8"
+                CornerRadius="30" 
+                Margin="10"
+                WidthRequest="200"
+                HeightRequest="50"
+                Clicked="Button_Clicked"/>
+
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

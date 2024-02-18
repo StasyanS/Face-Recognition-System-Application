@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp9.ItemsPage"
+             Title="ItemsPage"
+             Background="White">
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label x:Name="txtHello" 
+            Text="Привет!"
+            HorizontalOptions="Center" 
+            TextColor="Black"/>
+            <Label x:Name="txtToday" 
+            HorizontalOptions="Center" 
+            TextColor="Black"/>
+            <Label 
+            Text="Список преступников"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            TextColor="Black"/>
+
+            <!-- Строка для поиска -->
+            <SearchBar x:Name="searchBar" Grid.Column="0" Placeholder="Поиск по ФИО" TextColor="Black" TextChanged="searchBar_TextChanged" SearchCommand="{Binding SearchCommand}" />
+        </VerticalStackLayout>
+
+        <!-- Список ФИО -->
+        <ListView x:Name="listView" Grid.Column="1" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Информация о найденном ФИО -->
+        <StackLayout x:Name="infoLayout" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False">
+            <Label x:Name="infoName" TextColor="Black"/>
+            <Label x:Name="infoCity" TextColor="Black"/>
+            <Label x:Name="infoAge" TextColor="Black"/>
+            <Image x:Name="infoPhoto" HeightRequest="100" WidthRequest="100" />
+        </StackLayout>
+
+        <!-- Кнопка добавления новых людей в список -->
+        <Button x:Name="addPerson" 
+                Text="Добавить"
+                WidthRequest="241"
+                HeightRequest="56"
+                BackgroundColor="#4347D8"
+                TextColor="White"
+                Clicked="addPerson_Clicked"
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                VerticalOptions="Start"
+                HorizontalOptions="End"
+                CornerRadius="28"
+                Margin="0,20,20,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>

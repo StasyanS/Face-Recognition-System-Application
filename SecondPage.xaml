@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp9.SecondPage"
+             Title="SecondPage"
+             BackgroundColor="White">
+    <ScrollView>
+    <VerticalStackLayout>
+       <Label Text="Вход в систему распознавания лиц"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center"
+       Grid.Row="1"
+       Grid.Column="1" 
+       TextColor="Black"
+       FontSize="Large"
+       Margin="20"
+       />
+        
+       <Label Text="Для входа введите свой логин и пароль"
+       HorizontalOptions="Center"
+       TextColor="Black"
+       FontSize="16"
+       Margin="0,0,0,10"
+       />
+        
+            <Image Source="logo.png"
+               HeightRequest="100"
+               WidthRequest="100"/>
+
+
+            <Label Text="Логин" 
+               TextColor="Black"
+               Grid.Column="4"
+               HorizontalOptions="Center"
+               FontSize="16"
+               Margin="5"
+                   />
+            <Frame BackgroundColor="#F1F1F1" 
+                   CornerRadius="12" 
+                   Margin="5"   
+                   WidthRequest="450"
+                   HeightRequest="70"
+                   >
+                
+                <Entry x:Name="txtName" 
+                       Placeholder="IvanII9872" 
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Start"
+
+                       WidthRequest="200" 
+                       TextColor="Black"
+                       Grid.Row="4" 
+                       Grid.Column="1"
+                       />
+            </Frame>
+
+            <Label Text="Пароль" 
+               TextColor="Black"
+               HorizontalOptions="Center"
+               FontSize="16"
+               Margin="5"
+                   />
+        
+            <Frame BackgroundColor="#F1F1F1" 
+                   CornerRadius="12" 
+                   Margin="5"
+                   WidthRequest="450"
+                   HeightRequest="70"
+                   >
+                
+                <Entry x:Name="txtPass" 
+                       IsPassword="True" 
+                       Placeholder="•••••••" 
+                       TextColor="Black"                        
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Start"
+                       WidthRequest="200"/>
+        </Frame>
+
+        <Button Text="Отправить" WidthRequest="200" HeightRequest="60" Clicked="Button_Clicked" BackgroundColor="#4347D8" TextColor="White" CornerRadius="30" Margin="10"/>
+
+        <Grid x:Name="stk">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Забыли пароль?"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="20"
+                >
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
